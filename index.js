@@ -37,6 +37,7 @@ app.get("/", async (req, res) => {
       id: r.id,
       ...r.properties,
     }));
+
     res.render("homepage", { title: "Courses", rows });
   } catch (err) {
     console.error(err?.response?.data || err.message);
@@ -44,7 +45,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.get("/update-cobj", async (req, res) => {
+app.get("/update-cobj", (req, res) => {
   res.render("updates", {
     title: "Update Course",
   });
@@ -69,4 +70,4 @@ app.post("/update-cobj", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log(`http://localhost:${PORT}`));
+app.listen(3000, () => console.log(`Listening on http://localhost:${PORT}`));
