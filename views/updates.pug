@@ -1,0 +1,27 @@
+doctype html 
+html    
+    head 
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title #{ title || "Add Course" }
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css")
+    body
+        .max-w-5xl.mx-auto.py-16.px-5.text-right
+            a(href="/" class="px-8 py-3 border-2 border-pink-700 inline-block text-white text-sm font-bold bg-pink-700 transition-all cursor-pointer hover:bg-white hover:text-pink-700") Back to Course
+            div(class="p-16 border-2 border-gray-200 mt-6 text-left")
+                form.space-y-6(method="POST", action="/update-cobj")
+                    div
+                        label(class="block mb-2 font-semibold text-gray-800") Name of the Course
+                        input(type="text", id="name_of_the_course", required, name="name_of_the_course", class="border border-gray-200 text-gray-800 focus:outline-none focus:ring-4 focus:ring-pink-800 focus:ring-opacity-20 focus:border-pink-800 block w-full px-5 py-4")
+                    div
+                        label(class="block mb-2 font-semibold text-gray-800") Course Owner
+                        input(type="text", id="course_owner", required, name="course_owner", class="border border-gray-200 text-gray-800 focus:outline-none focus:ring-4 focus:ring-pink-800 focus:ring-opacity-20 focus:border-pink-800 block w-full px-5 py-4")
+                    div
+                        label(class="block mb-2 font-semibold text-gray-800") Course Id
+                        input(type="text", id="course_id", required, name="course_id", class="border border-gray-200 text-gray-800 focus:outline-none focus:ring-4 focus:ring-pink-800 focus:ring-opacity-20 focus:border-pink-800 block w-full px-5 py-4")
+                    div
+                        label(class="block mb-2 font-semibold text-gray-800") Price
+                        input(type="text", id="price", required, name="price", class="border border-gray-200 text-gray-800 focus:outline-none focus:ring-4 focus:ring-pink-800 focus:ring-opacity-20 focus:border-pink-800 block w-full px-5 py-4")
+                    div.text-right 
+                        button(type="submit", class="px-8 py-3 border-2 border-pink-700 inline-block text-white text-sm font-bold bg-pink-700 transition-all cursor-pointer hover:bg-white hover:text-pink-700") Submit
